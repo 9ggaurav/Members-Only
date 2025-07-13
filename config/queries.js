@@ -11,6 +11,7 @@ const selectUserByEmail = async (email) => {
     const { rows } = await pool.query(`
         SELECT email FROM users WHERE email = $1
         `, [email])
+    console.log(rows.email);
     return rows;
 }
 

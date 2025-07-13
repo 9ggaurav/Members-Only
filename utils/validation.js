@@ -16,7 +16,7 @@ const validateUserRegister = [
         .isEmail().withMessage("Invalid email")
         .custom(async (email) => {
             const existing = await selectUserByEmail(email);
-            if(existing) {
+            if(existing.length > 0) {
                 throw new Error(`Email (${email}) is already registered`);
             }
             return true
