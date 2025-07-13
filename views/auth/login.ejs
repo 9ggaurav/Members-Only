@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <form method="POST" action="/auth/register">
+        <h2>Login</h2>
+        <div> 
+            <input type="email" id="email" name="email" placeholder="email" required>
+        </div>
+        <div>    
+            <input type="password" id="password" name="password" placeholder="password" required>
+        </div>
+        <input type="submit" value="login">
+        <p>New here? <a href="/auth/register">Register</a></p>
+    </form>
+</body>
+</html>
