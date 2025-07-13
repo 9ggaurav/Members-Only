@@ -12,10 +12,10 @@
     <form method="POST" action="/auth/register">
         <h2>Register</h2>
         <div>       
-            <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
         </div>
         <div>       
-            <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
         </div>
         <div> 
             <input type="email" id="email" name="email" placeholder="email" required>
@@ -28,6 +28,14 @@
         </div>
         <input type="submit" value="register">
         <p>Already have an account? <a href="/auth/login">Login</a></p>
+        <br>
+        <% if (errors && errors.length > 0) { %>
+            <ul>
+                <% errors.map(error => { %>
+                    <li><%= error.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
     </form>
 </body>
 </html>
