@@ -1,4 +1,4 @@
-const pool = require("./pool");
+const { pool } = require("./pool");
 
 const selectAllUsers = async() => {
     const { rows } = await pool.query(`
@@ -9,7 +9,7 @@ const selectAllUsers = async() => {
 
 const selectUserByEmail = async (email) => {
     const { rows } = await pool.query(`
-        SELECT email FROM users WHERE email = $1
+        SELECT * FROM users WHERE email = $1
         `, [email])
     console.log(rows.email);
     return rows;

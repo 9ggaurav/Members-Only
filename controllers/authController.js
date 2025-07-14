@@ -19,3 +19,19 @@ exports.registerUserController = [
         res.redirect("login");
     }
 ]
+
+exports.loginUserController = [
+    validateUserLogin,
+    async(req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            console.log(errors.array())
+            return res.status(400).render("auth/login", {
+                errors: errors.array()
+            })
+        }
+        let {email, password} = req.body;
+        console.log(email, password);
+        res.redirect("/auth/login");
+    }
+]

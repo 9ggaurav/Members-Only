@@ -4,15 +4,22 @@
     box-sizing: border-box;
 }
 
-a, h1, h2, h3, h4, h5, h6 {
+a, h1, h2, h3, h4, h5, h6, main, p {
     padding: 0;
     margin: 0;
     line-height: 1;
     margin-bottom: 12px;
 }
 
+
 nav {
     padding: 20px;
+}
+
+.logged-in-nav > div {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav > div{
