@@ -10,7 +10,8 @@ exports.registerUserController = [
         if (!errors.isEmpty()) {
             console.log(errors.array())
             return res.status(400).render("auth/register", {
-                errors: errors.array()
+                errors: errors.array(),
+                user: req.user
             })
         }
         let {firstname, lastname, email, password} = req.body;

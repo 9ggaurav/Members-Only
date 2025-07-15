@@ -1,19 +1,11 @@
 const { Router } = require("express");
+const { homeController, aboutController } = require("../controllers/dashboardController");
 
 const publicRouter = Router();
 
-publicRouter.get("/", (req, res) => {
-    // console.log(req.user.email);
-    res.render("layouts/home", {
-        user: req.user,
-    });
-} )
+publicRouter.get("/", homeController)
 
-publicRouter.get("/about", (req, res) => {
-    res.render("layouts/about", {
-        user: req.user,
-    });
-})
+publicRouter.get("/about", aboutController)
 
 
 module.exports = publicRouter;

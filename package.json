@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/9ggaurav/Members-Only#readme",
   "dependencies": {
+    "98.css": "^0.1.21",
     "bcryptjs": "^3.0.2",
     "connect-flash": "^0.1.1",
     "connect-pg-simple": "^10.0.0",
